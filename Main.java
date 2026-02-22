@@ -42,7 +42,13 @@ public class Main
 	{
 		
 		System.out.println();
-		
+		//Instantiating a person object as a test
+		Person testPerson = new Person("Darya",175, 57);
+		System.out.println("Test person:");
+		System.out.println(testPerson);
+		//Instantiating a PersonSet object as a test
+		PersonSet personSet = new PersonSet();
+		//read in hr.txt and display it to command prompt
 		/*
 		// Don't overcomplicate the data
 		// reading. After skipping the

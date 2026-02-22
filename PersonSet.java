@@ -4,22 +4,34 @@ public class PersonSet implements PersonList
 {
     protected ArrayList<Person> people;
 
-    @Override
-    public void add(Person p) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'add'");
+    //constructor
+
+    public PersonSet()
+    {
+        people = new ArrayList<>();
     }
 
     @Override
-    public Person get(int index) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'get'");
+    public void add(Person p) 
+    {
+       if(!people.contains(p)) //if p isn't isn't in the array list
+            people.add(p); //add p
     }
 
+    @Override
+    public Person get(int index) 
+    {
+        return people.get(index);
+    }
     @Override
     public String toString()
     {
-        return " "; //TODO: fill this in
+        String result = ""; 
+         //loops through string
+        for(Person p : people) //for each person
+            result = result + p.toString() + "\n"; //add result to result
+
+        return result;
     }
     
 }
