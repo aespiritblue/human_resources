@@ -27,18 +27,18 @@ public class Person {
 
     public void setHeight(double height)
     {
-
+        this.height = height;
     }
 
     public void setWeight(double weight)
     {
-
+        this.weight = weight;
     }
-
+    //toString method to output the instance variables
     @Override
     public String toString()
     {
-        return name + "\t" + height + "\t" + weight; //TODO make this a database ready format
+        return String.format("%-10s %-12.0f %-12.0f", name, height, weight); 
     }
     
     //Equals method outline

@@ -21,7 +21,7 @@ public class PersonSet implements PersonList
     @Override
     public Person get(int index) 
     {
-        return people.get(index);
+        return people.get(index); //returns a person from arraylist
     }
     @Override
     public String toString()
@@ -29,7 +29,7 @@ public class PersonSet implements PersonList
         String result = ""; 
          //loops through string
         for(Person p : people) //for each person
-            result = result + p.toString() + "\n"; //add result to result
+            result = result + p.toString() + "\n"; //add result to result plus a person
 
         return result;
     }
