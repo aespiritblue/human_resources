@@ -1,4 +1,5 @@
-public class Person {
+public class Person implements Comparable<Person>
+{
 
     //instance variables
     private String name;
@@ -11,6 +12,14 @@ public class Person {
         this.name = name;
         this.height = height;
         this.weight = weight;
+    }
+    
+    //copy constructor to prevent unintended conversion
+    public Person(Person another)
+    {
+        this.name = another.name;
+        this.height = another.height;
+        this.weight = another.weight;
     }
 
     //setters and getters
@@ -64,4 +73,12 @@ public class Person {
     //else return false
         return false;
     }
+
+    //allows Person objects to be sorted using Collections.sort
+    @Override
+    public int compareTo(Person other)
+    {
+        return this.name.compareTo(other.name);
+    }
+
 }
