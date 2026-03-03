@@ -59,12 +59,18 @@ public class Main
 		//new line to add space
 		System.out.println();
 		//Instantiating a person object as a test
-		Person testPerson = new Person("Darya",175, 57);
-		System.out.println("Test person:");
-		System.out.println(testPerson);
-		System.out.println();
+		//Person testPerson = new Person("Darya",175, 57);
+		//System.out.println("Test person:");
+		//System.out.println(testPerson);
+		//System.out.println();
 		//Instantiating a PersonSet object as a test
-		PersonSet personSet = new PersonSet();
+		//PersonSet personSet = new PersonSet();
+
+		//Instantiate new PersonOrderedSet and PersonImperialSet
+
+		PersonOrderedSet personOrderedSet = new PersonOrderedSet();
+		PersonImperialSet personImperialSet = new PersonImperialSet();
+
 		//read in hr.txt and display it to command prompt
 		try
 		{
@@ -78,11 +84,16 @@ public class Main
 				double height = fileReader.nextDouble();
 				double weight = fileReader.nextDouble();
 
-				Person p = new Person(name, height, weight); //assigns each line to p
-				personSet.add(p); //adds it to person set
+				Person metricPerson = new Person(name, height, weight); //modified variable name to reflect that the data is in metric
+				Person imperialPerson = new Person(metricPerson);
+
+				//adds metricperson to orderedset
+				personOrderedSet.add(metricPerson);
+				personImperialSet.add(imperialPerson);
+				//personSet.add(p); //adds it to person set
 
 			}	
-			System.out.println(personSet); //prints personset
+			//System.out.println(personSet); //prints personset
 
 			fileReader.close(); //close scanner
 		}
@@ -101,11 +112,12 @@ public class Main
 		// Scanner is named "fileReader"
 		*/
 	
-		/* 
+		//write imperial set
 		try
 		{	
-			FileWriter fileWriterOrder = new FileWriter("outputfile.txt");
-			fileWriterOrder.write("testing");
+			FileWriter fileWriterOrder = new FileWriter("hr_imperial_set_output.txt");
+			fileWriterOrder.write("Name\tHeight (in)\t\tWeight (lbs)\n"); //I'm not sure if it's allowed to use the header in hr.txt
+			fileWriterOrder.write(personImperialSet.toString());
 			fileWriterOrder.close();
 		}
 		catch(IOException e)
@@ -114,6 +126,29 @@ public class Main
 			System.out.println(e);
 			System.exit(1);
 		}
-		*/
+
+		//write ordered set
+		try
+		{	
+			FileWriter fileWriterOrder = new FileWriter("hr_ordered_set_output.txt");
+			fileWriterOrder.write("Name\tHeight (cm)\t\tWeight (kg)\n");
+			fileWriterOrder.write(personOrderedSet.toString());
+			fileWriterOrder.close();
+		}
+		catch(IOException e)
+		{
+			e.printStackTrace();
+			System.out.println(e);
+			System.exit(1);
+		}
+		
+		System.out.println("Ordered set:");
+		System.out.println("Name\tHeight (cm)\tWeight (kg)");
+		System.out.println(personOrderedSet);
+
+		System.out.println("Imperial set:");
+		System.out.println("Name\tHeight (in)\tWeight (lbs)");
+		System.out.println(personImperialSet);
+		
 	}
 }

@@ -47,7 +47,8 @@ public class Person implements Comparable<Person>
     @Override
     public String toString()
     {
-        return String.format("%-10s %-12.0f %-12.0f", name, height, weight); 
+        return String.format("%-10s %-12.2f %-12.2f", name, height, weight); 
+        //modified toString to round to the nearest hundredth
     }
     
     //Equals method outline
