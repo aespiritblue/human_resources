@@ -45,6 +45,8 @@ https://www.w3schools.com/Java/java_ref_scanner.asp
 https://www.w3schools.com/java/java_arraylist.asp
 https://www.geeksforgeeks.org/java/arraylist-in-java/
 https://www.geeksforgeeks.org/java/abstraction-in-java-2/
+https://www.geeksforgeeks.org/java/comparable-interface-in-java-with-examples/
+https://www.baeldung.com/java-copy-constructor
 */
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -116,7 +118,7 @@ public class Main
 		try
 		{	
 			FileWriter fileWriterOrder = new FileWriter("hr_imperial_set_output.txt");
-			fileWriterOrder.write("Name\tHeight (in)\t\tWeight (lbs)\n"); //I'm not sure if it's allowed to use the header in hr.txt
+			fileWriterOrder.write("Name\tHeight (in)\tWeight (lbs)\n"); //I'm not sure if it's allowed to use the header in hr.txt
 			fileWriterOrder.write(personImperialSet.toString());
 			fileWriterOrder.close();
 		}
@@ -131,7 +133,7 @@ public class Main
 		try
 		{	
 			FileWriter fileWriterOrder = new FileWriter("hr_ordered_set_output.txt");
-			fileWriterOrder.write("Name\tHeight (cm)\t\tWeight (kg)\n");
+			fileWriterOrder.write("Name\tHeight (cm)\tWeight (kg)\n");
 			fileWriterOrder.write(personOrderedSet.toString());
 			fileWriterOrder.close();
 		}
